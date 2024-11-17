@@ -5,7 +5,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-2">About Me</h2>
           <div className="w-12 h-1 rounded mb-6" style={{ background: 'linear-gradient(90deg, #ffdb70, #ffbb5c)' }} />
           <p className="text-zinc-400 leading-relaxed">
-            I'm a Full-stack Developer based in Argentina, specializing in web development and AI integration. I am passionate about transforming complex problems into simple, elegant, and intuitive designs.
+            I&apos;m a Full-stack Developer based in Argentina, specializing in web development and AI integration. I am passionate about transforming complex problems into simple, elegant, and intuitive designs.
           </p>
           <p className="text-zinc-400 leading-relaxed mt-4">
             My role involves creating websites that are not only functional and user-friendly but also visually appealing. I ensure that each project receives a personal touch, making your product distinctive and engaging. My goal is to convey your message and identity in the most creative and effective manner possible.
