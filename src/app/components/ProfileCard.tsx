@@ -1,15 +1,18 @@
 // app/components/ProfileCard.tsx
 import { Mail, Phone, Calendar, MapPin, Twitter, Instagram } from 'lucide-react'
+import Image from 'next/image';
 
 export default function ProfileCard() {
   return (
     <div className="bg-[#1e1e1f] rounded-lg p-8">
       <div className="flex flex-col items-center">
         <div className=" bg-zinc-800 rounded-lg mb-6">
-          <img
+          <Image
             alt="Profile"
             className="w-full h-full object-cover rounded-lg"
             src="/sassa.webp"
+            width={500}  
+            height={500}
           />
         </div>
         <h1 className="text-2xl text-center font-bold mb-2">Salvador Sassatelli</h1>

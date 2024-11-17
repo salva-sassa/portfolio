@@ -13,7 +13,7 @@ export default function Home() {
         </div>
   
         <div>
-          <h2 className="text-2xl font-bold mb-6">What I'm Doing</h2>
+          <h2 className="text-2xl font-bold mb-6">What I&apos;m Doing</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-[#121212] p-6 rounded-lg border border-[#383838]">
               <div className="flex items-center gap-4">
