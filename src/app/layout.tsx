@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { poppins } from '@/app/ui/fonts';
 import "./globals.css";
-import Image from 'next/image';
 import ProfileCard from "./components/ProfileCard";
 import ThemeProvider from "./components/ThemeProvider";
 import ThemeToggle from "./components/ThemeToggle";
