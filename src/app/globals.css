@@ -63,39 +63,65 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border;
-    scrollbar-gutter: stable overlay; /* Ensures the scrollbar does not shift content */
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  .scrollbar-gutter-stable {
-    scrollbar-gutter: stable overlay; /* Specifically applies this behavior to elements with this class */
-  }
-  .map {
-    border: none;
-    filter: grayscale(1) invert(1);
-    height: 100%;
-    width: 100%;
-  }
-  /* Custom scrollbar styling */
+  /* Custom scrollbar styling using CSS variables */
   ::-webkit-scrollbar {
     width: 12px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #1e1e1f; /* Same as card background */
+    background: hsl(var(--secondary)); /* Uses the secondary color from your theme */
+    border-radius: 6px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #383838; /* Darker shade for contrast */
+    background-color: hsl(var(--muted-foreground)); /* Uses muted-foreground for a subtle contrast */
     border-radius: 6px;
-    border: 2px solid #1e1e1f; /* Adds padding around the thumb */
+    border: 2px solid hsl(var(--secondary)); /* Matches track color */
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #505050; /* Slightly lighter on hover */
+    background-color: hsl(var(--primary)); /* More prominent on hover */
+  }
+
+  /* Ensure Firefox also gets styled scrollbars */
+  * {
+    scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--secondary));
+    scrollbar-width: thin;
   }
 }
 
+@keyframes spin1080 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1080deg); /* 3 full rotations */
+  }
+}
+
+@keyframes fancySpin {
+  0% {
+    transform: rotate(0deg) scale(1) translateY(0) translateX(0);
+  }
+  15% {
+    transform: rotate(10deg) scale(1.02) translateY(-5px) translateX(3px);
+  }
+  30% {
+    transform: rotate(-5deg) scale(1.05) translateY(3px) translateX(-2px);
+  }
+  45% {
+    transform: rotate(3deg) scale(1.03) translateY(-4px) translateX(2px);
+  }
+  60% {
+    transform: rotate(-2deg) scale(1.04) translateY(2px) translateX(-1px);
+  }
+  75% {
+    transform: rotate(1deg) scale(1.02) translateY(-2px) translateX(1px);
+  }
+  90% {
+    transform: rotate(-1deg) scale(1.01) translateY(1px) translateX(-0.5px);
+  }
+  100% {
+    transform: rotate(0deg) scale(1) translateY(0) translateX(0);
+  }
+}

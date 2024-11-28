@@ -1,22 +1,28 @@
-// app/components/ProfileCard.tsx
-import { Mail, Phone, Calendar, MapPin, Twitter, Instagram } from 'lucide-react'
+import { Mail, Phone, Calendar, MapPin, Twitter, Instagram } from 'lucide-react';
 import Image from 'next/image';
 
 export default function ProfileCard() {
   return (
-    <div className="bg-[#1e1e1f] rounded-lg p-8">
+    <div className="rounded-lg p-8">
       <div className="flex flex-col items-center">
-        <div className=" bg-zinc-800 rounded-lg mb-6">
+        <div className="bg-zinc-800 rounded-lg mb-6">
           <Image
             alt="Profile"
-            className="w-full h-full object-cover rounded-lg"
-            src="/sassa.webp"
-            width={500}  
+            className="w-full h-full object-cover rounded-lg dark:hidden"
+            src="/soft.png"
+            width={500}
+            height={500}
+          />
+          <Image
+            alt="Profile"
+            className="w-full h-full object-cover rounded-lg hidden dark:block"
+            src="/serious.png"
+            width={500}
             height={500}
           />
         </div>
         <h1 className="text-2xl text-center font-bold mb-2">Salvador Sassatelli</h1>
-        <div className="bg-zinc-800/50 px-4 py-1 rounded-full text-sm mb-8">
+        <div className="bg-zinc-800/10 dark:bg-zinc-800  px-4 py-1 rounded-full text-sm mb-8">
           Full-stack IA focused developer
         </div>
 
@@ -28,7 +34,7 @@ export default function ProfileCard() {
               <p className="text-sm">salvasassa3@gmail.com</p>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-4">
             <Phone className="w-5 h-5" style={{ color: '#ffdb70' }} />
             <div>
@@ -60,5 +66,5 @@ export default function ProfileCard() {
         </div>
       </div>
     </div>
-  )
+  );
 }
