@@ -30,7 +30,7 @@ export default function ContactPage() {
             width="100%"
             height="100%"
             style={{ border: 0 }}
-            className='map'
+            className='map filter invert grayscale'
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -38,13 +38,13 @@ export default function ContactPage() {
         </div>
 
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <input
                 type="text"
                 placeholder="Full name"
-                className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-[#383838] focus:border-[#ffdb70] focus:outline-none transition-colors"
+                className="w-full px-4 py-1.5 rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
@@ -54,7 +54,7 @@ export default function ContactPage() {
               <input
                 type="email"
                 placeholder="Email address"
-                className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-[#383838] focus:border-[#ffdb70] focus:outline-none transition-colors"
+                className="w-full px-4 py-1.5 rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
@@ -64,8 +64,8 @@ export default function ContactPage() {
           <div>
             <textarea
               placeholder="Your Message"
-              rows={6}
-              className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-[#383838] focus:border-[#ffdb70] focus:outline-none transition-colors resize-none"
+              rows={3}
+              className="w-full px-4 py-1.5 rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors resize-none"
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               required
@@ -73,8 +73,7 @@ export default function ContactPage() {
           </div>
           <button
             type="submit"
-            className="px-8 py-3 rounded-lg text-black font-medium transition-colors"
-            style={{ background: 'linear-gradient(90deg, #ffdb70, #ffbb5c)' }}
+            className="px-4 py-1.5 rounded-lg text-gray-200 dark:text-black font-medium dark:bg-gradient-to-r dark:from-[#f5ca48] dark:to-[#ffbb5c] bg-gradient-to-r from-[#7E7E7E] to-[#3C3C3C] filter hover:scale-105 transition-all"
           >
             Send Message
           </button>

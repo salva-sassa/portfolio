@@ -15,7 +15,7 @@ export default function Home() {
         <div>
           <h2 className="text-2xl font-bold mb-6">What I&apos;m Doing</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-[#121212] p-6 rounded-lg border border-[#383838]">
+            <div className="dark:bg-[#121212] p-6 rounded-lg border border-[#383838]">
               <div className="flex items-center gap-4">
                 <div className="text-4xl bg-gradient-to-r from-[#ffdb70] to-[#ffbb5c] bg-clip-text text-transparent">{'</>'}</div>
                 <div>
@@ -25,7 +25,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="bg-[#121212] p-6 rounded-lg border border-[#383838]">
+            <div className="dark:bg-[#121212] p-6 rounded-lg border border-[#383838]">
               <div className="flex items-center gap-4">
                 <div className="text-4xl bg-gradient-to-r from-[#ffdb70] to-[#ffbb5c] bg-clip-text text-transparent">📱</div>
                 <div>
