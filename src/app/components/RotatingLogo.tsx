@@ -1,29 +1,31 @@
-"use client";
-import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import gsap from "gsap";
+"use client"
+
+import { useState, useEffect, useRef } from "react"
+import Image from "next/image"
+import gsap from "gsap"
+import { useSpinStore } from "@/store/UseSpinStore"
 
 export default function RotatingLogo() {
-  // Refs for image elements
-  const lightLogoRef = useRef(null);
-  const darkLogoRef = useRef(null);
+  const lightLogoRef = useRef(null)
+  const darkLogoRef = useRef(null)
 
-  const [isSpinning, setIsSpinning] = useState(false); // State to track if the logo is spinning
-  const [rotationDegree, setRotationDegree] = useState(0); // State to track the current rotation degree
+  const { isSpinning: isGlobalSpinning, rotationDegree: globalRotationDegree, stopSpin } = useSpinStore()
+  const [isHoverSpinning, setIsHoverSpinning] = useState(false)
+  const [hoverRotationDegree, setHoverRotationDegree] = useState(0)
 
-  // Function to handle hover and update rotation
   const handleMouseEnter = () => {
-    setIsSpinning(true);
-    setRotationDegree((prev) => prev + 1080); // Add 1080 degrees each time we hover
-  };
+    setIsHoverSpinning(true)
+    setHoverRotationDegree((prev) => prev + 1080)
+  }
 
   const handleMouseLeave = () => {
-    setIsSpinning(false); // Stop spinning when mouse leaves
-  };
+    setIsHoverSpinning(false)
+    stopSpin() // Stop global spinning when mouse leaves
+  }
 
   // Set up GSAP animation for idle state
   useEffect(() => {
-    const tl = gsap.timeline({ repeat: -1, yoyo: true, paused: true });
+    const tl = gsap.timeline({ repeat: -1, yoyo: true, paused: true })
 
     // Add a soft floating animation on both logos
     tl.to([lightLogoRef.current, darkLogoRef.current], {
@@ -32,32 +34,32 @@ export default function RotatingLogo() {
       ease: "power1.inOut",
       repeat: -1,
       yoyo: true,
-    });
+    })
 
     // Play the idle animation immediately on mount
-    tl.play();
+    tl.play()
 
     return () => {
-      tl.kill(); // Clean up GSAP timeline when the component is unmounted
-    };
-  }, []);
+      tl.kill() // Clean up GSAP timeline when the component is unmounted
+    }
+  }, [])
 
-  // GSAP spin animation when hovering
+  // GSAP spin animation
   useEffect(() => {
-    if (isSpinning) {
+    if (isGlobalSpinning || isHoverSpinning) {
       gsap.to([lightLogoRef.current, darkLogoRef.current], {
-        rotation: rotationDegree,
+        rotation: isGlobalSpinning ? globalRotationDegree : hoverRotationDegree,
         duration: 1, // Duration of the spin
         ease: "power3.inOut",
-      });
+      })
     }
-  }, [isSpinning, rotationDegree]);
+  }, [isGlobalSpinning, isHoverSpinning, globalRotationDegree, hoverRotationDegree])
 
   return (
     <div
       className="absolute -top-8 -left-16 flex items-center justify-center"
-      onMouseEnter={handleMouseEnter} // Trigger the spin on hover
-      onMouseLeave={handleMouseLeave} // Stop spinning when mouse leaves
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* Light Mode Image */}
       <Image
@@ -78,5 +80,6 @@ export default function RotatingLogo() {
         height={64}
       />
     </div>
-  );
+  )
 }
+
