@@ -1,5 +1,6 @@
-import { Mail, Phone, Calendar, MapPin, Twitter, Instagram } from 'lucide-react';
+import { Mail, Phone, Calendar, MapPin, Twitter, Instagram, Github } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProfileCard() {
   return (
@@ -61,8 +62,15 @@ export default function ProfileCard() {
         </div>
 
         <div className="flex gap-4 mt-8">
-          <Twitter className="w-5 h-5 text-zinc-400 hover:text-[#ffdb70] transition-colors cursor-pointer" />
-          <Instagram className="w-5 h-5 text-zinc-400 hover:text-[#ffdb70] transition-colors cursor-pointer" />
+          <Link href="https://github.com/salva-sassa" target="_blank" rel="noopener noreferrer">
+            <Github className="w-5 h-5 text-zinc-400 hover:text-[#ffdb70] transition-colors cursor-pointer" />
+          </Link>
+          <Link href="https://x.com/salvasassa3" target="_blank" rel="noopener noreferrer">
+            <Twitter className="w-5 h-5 text-zinc-400 hover:text-[#ffdb70] transition-colors cursor-pointer" />
+          </Link>
+          <Link href="https://www.instagram.com/salva_sassa/" target="_blank" rel="noopener noreferrer">
+            <Instagram className="w-5 h-5 text-zinc-400 hover:text-[#ffdb70] transition-colors cursor-pointer" />
+          </Link>
         </div>
       </div>
     </div>
