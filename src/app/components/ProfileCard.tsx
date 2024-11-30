@@ -77,16 +77,16 @@ export default function ProfileCard() {
         </div>
 
         <div className="flex items-center w-full gap-4 mt-8">
-          <Link
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-zinc-400 bg-zinc-800 rounded-md hover:bg-[#ffdb70] hover:text-zinc-900 transition-colors"
-            aria-label="Download CV"
-          >
-            <span>CV</span>
-            <FileDown className="w-5 h-5" />
-          </Link>
+        <Link
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-zinc-400 bg-zinc-100 rounded-md hover:bg-[#ffdb70] hover:text-zinc-700 dark:text-zinc-400 dark:bg-zinc-800 dark:hover:bg-[#ffdb70] dark:hover:text-zinc-900 transition-all"
+          aria-label="Download CV"
+        >
+          <span>CV</span>
+          <FileDown className="w-5 h-5" />
+        </Link>
           <div className="flex gap-4">
             <Link href="https://www.linkedin.com/in/salvador-sassatelli/" target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-5 h-5 text-zinc-400 hover:text-[#ffdb70] transition-colors cursor-pointer" aria-label="Linkedin Profile" />
