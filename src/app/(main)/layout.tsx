@@ -16,7 +16,7 @@ export default function MainLayout({
   const navItems = [
     { href: '/', label: 'About', icon: Home },
     { href: '/resume', label: 'Resume', icon: FileText },
-    { href: '/portfolio', label: 'Portfolio', icon: Briefcase },
+    { href: '/craft', label: 'Craft', icon: Briefcase },
     { href: '/contact', label: 'Contact', icon: Mail },
   ]
 

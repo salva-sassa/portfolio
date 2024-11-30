@@ -42,7 +42,7 @@ export default function RootLayout({
               <ProfileCard />
             </div>
             <div
-              className="bg-white dark:bg-[#1e1e1f] rounded-lg border border-gray-200 dark:border-[#383838] sm:col-span-4 md:col-span-5 lg:col-span-5 overflow-y-auto shadow-md"
+              className="bg-white dark:bg-[#1e1e1f] rounded-lg border border-gray-200 dark:border-[#383838] sm:col-span-4 md:col-span-5 lg:col-span-5 overflow-y-auto h-fit max-h-full shadow-md"
             >
               {children}
             </div>
