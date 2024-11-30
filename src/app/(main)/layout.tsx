@@ -47,7 +47,7 @@ export default function MainLayout({
       </nav>
 
       {/* Mobile Navbar */}
-      <nav className="fixed z-50 bottom-0 left-0 right-0 md:hidden flex justify-around items-center bg-[#1e1e1f]/95 backdrop-blur-sm border-t dark:border-none text-gray-900 dark:bg-[#121212] dark:text-zinc-100 px-2 py-3">
+      <nav className="fixed z-50 bottom-0 left-0 right-0 md:hidden flex justify-around items-center bg-white dark:bg-[#1e1e1f]/95 backdrop-blur-sm border-t dark:border-none text-gray-900 dark:bg-[#121212] dark:text-zinc-100 px-2 py-3">
         {navItems.map((item) => {
           const Icon = item.icon
           return (
@@ -55,7 +55,7 @@ export default function MainLayout({
               key={item.href}
               onClick={() => handleLinkClick()} 
               href={item.href} 
-              className={`flex flex-col items-center ${pathname === item.href ? 'text-[#f5ca48]' : 'text-zinc-400'} hover:text-[#f5ca48] transition-colors`}
+              className={`flex flex-col items-center ${pathname === item.href ? 'text-[#f5ca48]' : 'text-zinc-500'} hover:text-[#f5ca48] transition-colors`}
             >
               <Icon className="w-6 h-6" />
               <span className="text-xs mt-1">{item.label}</span>
