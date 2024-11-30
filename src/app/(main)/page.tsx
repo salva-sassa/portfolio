@@ -1,11 +1,11 @@
 export default function Home() {
   return (
-    <div className="space-y-8 p-8 pt-0">
+    <div className="space-y-8 p-8 md:pt-0">
       <div>
         <h2 className="text-3xl font-bold mb-2">About Me</h2>
         <div className="w-12 h-1 rounded mb-6" style={{ background: 'linear-gradient(90deg, #ffdb70, #ffbb5c)' }} />
         <p className="text-zinc-400 leading-relaxed">
-          I'm a Full-stack Developer from Argentina with 2+ years of experience, currently leading a team to build scalable, AI-powered image generation tools. My expertise lies in fine-tuning models and integrating machine learning into web applications to create practical, real-world solutions.
+          I&apos;m a Full-stack Developer from Argentina with 2+ years of experience, currently leading a team to build scalable, AI-powered image generation tools. My expertise lies in fine-tuning models and integrating machine learning into web applications to create practical, real-world solutions.
         </p>
         <p className="text-zinc-400 leading-relaxed mt-4">
           I focus on building efficient software that solves complex problems, ensuring high performance and usability at every stage of development.
