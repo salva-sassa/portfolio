@@ -38,7 +38,8 @@ export default function MainLayout({
         {navItems.map((item) => (
           <Link
             key={item.href}
-            href={item.href} 
+            href={item.href}
+            onClick={() => handleLinkClick()} 
             className={`${pathname === item.href ? 'dark:bg-gradient-to-r dark:from-[#f5ca48] dark:to-[#ffbb5c] bg-gradient-to-r from-[#6f6f6f] to-[#3C3C3C] bg-clip-text text-transparent font-semibold' : 'text-zinc-400 font-semibold'} hover:text-[#636363] dark:hover:text-[#f5ca48] transition-colors`}
           >
             {item.label}
