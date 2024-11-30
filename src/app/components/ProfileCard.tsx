@@ -1,26 +1,41 @@
 import { Mail, Phone, Calendar, MapPin, Twitter, Instagram, Github } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
+
+
+function SkeletonLoader() {
+  return (
+    <div className="w-full h-full rounded-lg bg-zinc-700 animate-pulse"></div>
+  );
+}
+
 
 export default function ProfileCard() {
   return (
     <div className="rounded-lg p-8">
       <div className="flex flex-col items-center">
         <div className="bg-zinc-800 rounded-lg mb-6">
-          <Image
-            alt="Profile"
-            className="w-full h-full object-cover rounded-lg dark:hidden"
-            src="/soft.png"
-            width={500}
-            height={500}
-          />
-          <Image
-            alt="Profile"
-            className="w-full h-full object-cover rounded-lg hidden dark:block"
-            src="/serious.png"
-            width={500}
-            height={500}
-          />
+          <Suspense fallback={<SkeletonLoader />}>
+            <Image
+              alt="Profile"
+              className="w-full h-full object-cover rounded-lg dark:hidden"
+              src="/soft.png"
+              width={500}
+              height={500}
+              priority
+            />
+          </Suspense>
+          <Suspense fallback={<SkeletonLoader />}>
+            <Image
+              alt="Profile"
+              className="w-full h-full object-cover rounded-lg hidden dark:block"
+              src="/serious.png"
+              width={500}
+              height={500}
+              priority
+            />
+          </Suspense>
         </div>
         <h1 className="text-2xl text-center font-bold mb-2">Salvador Sassatelli</h1>
         <div className="bg-zinc-800/10 dark:bg-zinc-800  px-4 py-1 rounded-full text-sm mb-8">
