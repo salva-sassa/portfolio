@@ -35,14 +35,14 @@ export default function RootLayout({
           disableTransitionOnChange
           storageKey="portfolio-theme"
         >
-          <div className="max-w-7xl w-full h-full md:h-[calc(80vh-2rem)] mb-[15vh] grid grid-cols-1 sm:grid-cols-4 md:grid-cols-8 lg:grid-cols-7 gap-8">
+          <div className="max-w-7xl w-full h-full md:h-[calc(80vh-2rem)] mb-20 md:mb-[12vh] grid grid-cols-1 sm:grid-cols-4 md:grid-cols-8 lg:grid-cols-7 gap-8">
             <div className="relative bg-white dark:bg-[#1e1e1f] rounded-lg border h-fit sm:col-span-4 sm md:col-span-3 lg:col-span-2 border-gray-200 dark:border-[#383838] shadow-md">
               <RotatingLogo />
               {/* ProfileCard */}
               <ProfileCard />
             </div>
             <div
-              className="bg-white dark:bg-[#1e1e1f] rounded-lg border border-gray-200 dark:border-[#383838] sm:col-span-4 md:col-span-5 lg:col-span-5 overflow-y-auto shadow-md"
+              className="bg-white dark:bg-[#1e1e1f] rounded-lg border border-gray-200 dark:border-[#383838] sm:col-span-4 md:col-span-5 lg:col-span-5 overflow-y-auto h-fit max-h-full shadow-md"
             >
               {children}
             </div>
