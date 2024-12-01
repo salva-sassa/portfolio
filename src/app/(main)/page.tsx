@@ -5,10 +5,10 @@ export default function Home() {
         <h2 className="text-3xl font-bold mb-2">About Me</h2>
         <div className="w-12 h-1 rounded mb-6" style={{ background: 'linear-gradient(90deg, #ffdb70, #ffbb5c)' }} />
         <p className="text-zinc-400 leading-relaxed">
-          Full-stack developer from Argentina with 2+ years of experience. I lead a team building scalable, AI-powered tools, integrating AI into web applications for practical solutions.
+          Full-stack developer from Argentina with 2+ years of experience building scalable AI-powered tools. Currently leading a team to advance AI integration in development.
         </p>
         <p className="text-zinc-400 leading-relaxed mt-4">
-          I build efficient software that solves complex problems, prioritizing performance and usability.
+           Involved in every stage of the product lifecycle, from designing interfaces and developing features to deploying applications and working closely with clients to deliver effective solutions.
         </p>
       </div>
 
