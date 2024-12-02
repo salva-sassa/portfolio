@@ -33,7 +33,7 @@ export default function ResumePage() {
       responsibilities: [
         "Develop SaaS for AI-powered article generation",
         "Create web application for generating titles and complete articles based on client-requested topics",
-        "Integrate with WordPress for direct article publishing"
+        "Create AI Lessons, an AI-powered educational platform using Django, Celery, Tailwind, and Docker",
       ]
     },
     {
@@ -42,7 +42,6 @@ export default function ResumePage() {
       date: "February 2023 - 2024",
       responsibilities: [
         "Develop Darwash, a livestock management system with Django, PostgreSQL, and Tailwind",
-        "Create AI Lessons, an AI-powered educational platform using Django, Celery, Tailwind, and Docker",
         "Build company landing page using Django and Tailwind"
       ]
     }
