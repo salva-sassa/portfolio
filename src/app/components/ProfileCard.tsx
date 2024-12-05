@@ -20,7 +20,7 @@ export default function ProfileCard() {
             <Image
               alt="Profile"
               className="w-full h-full object-cover rounded-lg dark:hidden"
-              src="/salva-light.webp"
+              src="/salva-light2.webp"
               width={500}
               height={500}
               priority
