@@ -8,7 +8,7 @@ export async function sendEmail(formData: FormData) {
   const message = formData.get('message') as string
 
   // Create a transporter using SMTP
-  let transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     secure: false, // Use TLS
