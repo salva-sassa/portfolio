@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { sendEmail } from '@/app/actions/sendEmail'
+import { useToast } from "@/hooks/use-toast"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -8,11 +10,34 @@ export default function ContactPage() {
     email: '',
     message: ''
   })
+  const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log(formData)
+    const form = e.target as HTMLFormElement
+    const formData = new FormData(form)
+    
+    toast({
+      title: "Sending...",
+      description: "Your message is being sent.",
+    })
+
+    const result = await sendEmail(formData)
+
+    if (result.success) {
+      toast({
+        title: "Success!",
+        description: result.message,
+        variant: "default",
+      })
+      setFormData({ name: '', email: '', message: '' })
+    } else {
+      toast({
+        title: "Error!",
+        description: result.message,
+        variant: "destructive",
+      })
+    }
   }
 
   return (
@@ -43,6 +68,7 @@ export default function ContactPage() {
             <div>
               <input
                 type="text"
+                name="name"
                 placeholder="Full name"
                 className="w-full px-4 py-1.5 rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors"
                 value={formData.name}
@@ -53,6 +79,7 @@ export default function ContactPage() {
             <div>
               <input
                 type="email"
+                name="email"
                 placeholder="Email address"
                 className="w-full px-4 py-1.5 rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors"
                 value={formData.email}
@@ -63,6 +90,7 @@ export default function ContactPage() {
           </div>
           <div>
             <textarea
+              name="message"
               placeholder="Your Message"
               rows={3}
               className="w-full px-4 py-1.5 rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors resize-none"
@@ -82,3 +110,4 @@ export default function ContactPage() {
     </div>
   )
 }
+

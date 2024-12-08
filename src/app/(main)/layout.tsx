@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useSpinStore } from "@/store/UseSpinStore"
+import { Toaster } from "@/components/ui/toaster"
 import { Home, FileText, Briefcase, Mail } from 'lucide-react'
 
 export default function MainLayout({
@@ -67,6 +68,8 @@ export default function MainLayout({
       <div id='sections'>
        {children}
       </div>
+      <Toaster />
     </div>
   )
 }
+
