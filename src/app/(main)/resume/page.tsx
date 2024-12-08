@@ -64,7 +64,7 @@ export default function ResumePage() {
   ]
 
   return (
-    <div className="space-y-8 p-8 md:pt-0">
+    <div className="space-y-8 p-4 md:p-8 md:pt-0">
       <div>
         <h2 className="text-3xl font-bold mb-2">Resume</h2>
         <div className="w-12 h-1 rounded mb-6" style={{ background: 'linear-gradient(90deg, #ffdb70, #ffbb5c)' }} />
@@ -78,7 +78,7 @@ export default function ResumePage() {
 
 function Section({ title, icon: Icon, items }: SectionProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 px-2">
       <div className="flex items-center gap-2">
         <Icon className="w-6 h-6" style={{ color: '#ffdb70' }} />
         <h3 className="text-2xl font-bold">{title}</h3>
