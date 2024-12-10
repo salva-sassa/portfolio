@@ -1,4 +1,5 @@
 "use client"
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 // Inspired by react-hot-toast library
 import * as React from "react"
@@ -18,12 +19,14 @@ type ToasterToast = ToastProps & {
   action?: ToastActionElement
 }
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
   UPDATE_TOAST: "UPDATE_TOAST",
   DISMISS_TOAST: "DISMISS_TOAST",
   REMOVE_TOAST: "REMOVE_TOAST",
-} as const
+} as const;
+/* eslint-enable @typescript-eslint/no-unused-vars */
 
 let count = 0
 

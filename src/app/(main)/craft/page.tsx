@@ -4,10 +4,13 @@ import { useState } from 'react'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
+import { toast } from "@/hooks/use-toast"
+
 
 export default function PortfolioPage() {
   const [isHovered, setIsHovered] = useState(false)
   const [isHoveredProdeman, setIsHoveredProdeman] = useState(false)
+  const [isHoveredAilessons, setIsHoveredAilessons] = useState(false)
 
   return (
     <div className="space-y-8 p-4 md:p-8 md:pt-0">
@@ -63,6 +66,46 @@ export default function PortfolioPage() {
         <div className="group relative rounded-lg overflow-hidden">
           <div 
             className="relative"
+            onMouseEnter={() => setIsHoveredAilessons(true)}
+            onMouseLeave={() => setIsHoveredAilessons(false)}
+          >
+            <video
+              src="/projects/ailessons2_640p.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+            <div className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${isHoveredAilessons ? 'opacity-100' : 'opacity-0'}`}>
+              <div className="flex flex-col items-start justify-end h-full p-6">
+                <h3 className="text-xl text-white font-bold mb-2">AI lessons SaaS</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="bg-primary-foreground text-primary">Django</Badge>
+                  <Badge variant="outline" className="bg-primary-foreground text-primary">Celery</Badge>
+                  <Badge variant="outline" className="bg-primary-foreground text-primary">Langchain</Badge>
+                  <Badge variant="outline" className="bg-primary-foreground text-primary">Docker</Badge>
+                </div>
+              </div>
+            </div>
+            {!isHoveredAilessons && (
+              <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center">
+                <p className="text-xs text-white">AI lessons SaaS</p>
+                <p className="text-xs text-zinc-300">February 2024</p>
+              </div>
+            )}
+          </div>
+          <div className="flex">
+            <Button variant="secondary" size="sm" className="flex-1 rounded-none border-r hover:bg-zinc-200 dark:hover:bg-zinc-900 border-gray-300 dark:border-gray-950" asChild>
+              <Link href="/craft/ailessons-app">Learn More</Link>
+            </Button>
+          </div>
+        </div>
+
+        <div className="group relative rounded-lg overflow-hidden">
+          <div 
+            className="relative"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -82,7 +125,6 @@ export default function PortfolioPage() {
                   <Badge variant="outline" className="bg-primary-foreground text-primary">Django</Badge>
                   <Badge variant="outline" className="bg-primary-foreground text-primary">Design</Badge>
                   <Badge variant="outline" className="bg-primary-foreground text-primary">Illustrator</Badge>
-                  <Badge variant="outline" className="bg-primary-foreground text-primary">Docker</Badge>
                 </div>
               </div>
             </div>
@@ -103,6 +145,7 @@ export default function PortfolioPage() {
           </div>
         </div>
 
+        
         {/* You can add more project items here */}
       </div>
     </div>

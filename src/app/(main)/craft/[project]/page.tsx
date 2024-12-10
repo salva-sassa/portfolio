@@ -4,6 +4,7 @@ import { useParams, useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from 'lucide-react'
 import { Badge } from "@/components/ui/badge"
+import { toast } from "@/hooks/use-toast"
 
 const projects = {
   'prodeman-app': {
@@ -16,13 +17,22 @@ const projects = {
     link: 'https://prodeman-dev.mavin.com.ar/en/'
   },
   'mindfulness-app': {
-    title: 'Mindfulness App',
-    description: 'The Mindfulness App is a digital wellness platform designed to help users cultivate mindfulness and reduce stress through guided meditations and exercises. It features a clean, intuitive interface created with Django and custom illustrations.',
-    challenges: 'The main challenge was creating a seamless, distraction-free user experience that would encourage regular practice. We also needed to ensure the app could handle audio streaming efficiently and provide offline access to content.',
-    solutions: 'We designed a minimalist UI with custom illustrations to create a calming environment. We implemented progressive web app features for offline access and used efficient audio streaming techniques to ensure smooth playback of guided meditations.',
-    technologies: ['Django', 'React', 'Docker', 'PostgreSQL', 'AWS S3', 'Illustrator'],
+    title: 'Mindfulness & Trekking Experience',
+    description: 'A complete brand and digital presence crafted for a unique mindfulness and trekking entrepreneurship based in La Cumbrecita, Córdoba. This project combines the serenity of nature with the benefits of guided mindfulness practices.',
+    challenges: 'The primary challenge was creating a cohesive brand identity that resonated with the tranquility and adventure of the experience. Additionally, the landing page needed to integrate multimedia elements like illustrations, videos, and a booking system seamlessly while maintaining a high-performance and visually appealing interface.',
+    solutions: `We brought the client's vision to life by designing a custom brand identity, including logo, style guidelines, and Instagram visuals. A visually rich landing page was developed with illustrations, immersive imagery, and integrated video content. The booking system was tailored for weekend mindfulness and trekking trips, ensuring an intuitive user experience.`,
+    technologies: ['Django', 'PostgreSQL', 'Illustrator', 'Figma', 'Vercel'],
     date: 'December 2023',
     link: 'https://mindfulnesscba.vercel.app/'
+  },
+  'ailessons-app': {
+    title: 'AI Lessons App',
+    description: 'AI Lessons App is an innovative SaaS platform that revolutionizes educational content creation. It empowers teachers to generate theoretical content for their subjects in schools or universities based on their program. The app supports student groups, customized content, practical exercises, and exams.',
+    challenges: 'The main challenges included creating an intuitive interface for teachers to input their curriculum and generate relevant content, ensuring the AI-generated content was accurate and aligned with educational standards, and managing the scalability of the system to handle multiple users and content generation requests.',
+    solutions: 'We leveraged Django for the robust backend, integrated Celery for managing asynchronous tasks like content generation, and utilized Langchain for advanced natural language processing to create context-aware educational content. Docker was employed for easy deployment and scalability, while PostgreSQL ensured efficient data management for user profiles, content, and exam results.',
+    technologies: ['Django', 'Celery', 'Langchain', 'PostgreSQL', 'Docker'],
+    date: 'February 2024',
+    link: null
   }
 }
 
@@ -33,6 +43,18 @@ export default function ProjectPage() {
 
   if (!projectData) {
     return <div className="flex items-center justify-center h-screen">Project not found</div>
+  }
+
+  const handleVisitProject = () => {
+    if (projectData.link) {
+      window.open(projectData.link, '_blank', 'noopener,noreferrer')
+    } else {
+      toast({
+        title: "Not Available",
+        description: "This project is currently not available for viewing.",
+        duration: 3000,
+      })
+    }
   }
 
   return (
@@ -77,8 +99,8 @@ export default function ProjectPage() {
       </div>
       
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-4 border-t border-border dark:border-zinc-600">
-        <Button asChild>
-          <a href={projectData.link} target="_blank" rel="noopener noreferrer">Visit Project</a>
+        <Button onClick={handleVisitProject}>
+          Visit Project
         </Button>
         <p className="text-sm text-muted-foreground">
           <strong>Completed:</strong> {projectData.date}
