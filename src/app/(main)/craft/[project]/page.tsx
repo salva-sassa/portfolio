@@ -33,7 +33,16 @@ const projects = {
     technologies: ['Django', 'Celery', 'Langchain', 'PostgreSQL', 'Docker'],
     date: 'February 2024',
     link: null
-  }
+  },
+  'higueras-app': {
+  title: 'Higueras Municipality App',
+  description: 'The Higueras Municipality App is a complete redesign of the previous platform, focusing on a modern, user-friendly interface with improved UI/UX. The app simplifies the procedures for citizens and enhances the management experience for administration. It also integrates a weather API for real-time updates and includes basic CRUD functionalities.',
+  challenges: 'The main challenge was redesigning the entire app to improve the user experience while maintaining all existing functionalities. It was essential to make administrative tasks easier and more efficient, while ensuring the platform remained accessible to the citizens. Additionally, integrating the weather API seamlessly into the interface posed some technical hurdles.',
+  solutions: 'We revamped the app with a new design, focusing on simplicity and ease of use. The new UI/UX design improves the navigation and accessibility of procedures. CRUD operations were implemented to streamline the management tasks, and the weather API was integrated to provide real-time weather updates for the users. We also added an admin login feature for better control and management of the platform.',
+  technologies: ['Django', 'Docker', 'Illustrator', 'Figma'],
+  date: 'June 2023',
+  link: null
+}
 }
 
 export default function ProjectPage() {
