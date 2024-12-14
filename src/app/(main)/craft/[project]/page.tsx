@@ -42,7 +42,17 @@ const projects = {
   technologies: ['Django', 'Docker', 'Illustrator', 'Figma'],
   date: 'June 2023',
   link: null
+},
+'mavin-landing': {
+  title: 'Mavin Landing Page',
+  description: 'The Mavin Landing Page is the official platform for our company, designed to showcase our projects, expertise, and vision. It serves as a gateway for potential clients and collaborators to explore our work, highlighting our innovative approach and professional capabilities.',
+  challenges: 'The main challenges involved designing a landing page that effectively represents our company\'s identity while providing an intuitive and engaging experience. Balancing visual appeal, responsive design, and concise communication of our projects and values was a critical focus.',
+  solutions: 'We utilized Django for a robust and dynamic backend, ensuring easy management of showcased projects. Tailwind CSS was used to implement a modern and responsive design. Illustrator and Photoshop supported the creation of custom visuals that align with our brand identity, while animations were added to create an interactive experience. Performance optimizations ensured fast load times across all devices.',
+  technologies: ['Django', 'Tailwind', 'Photoshop', 'Illustrator'],
+  date: 'April 2023',
+  link: 'https://www.mavin.com.ar/work/'
 }
+
 }
 
 export default function ProjectPage() {
