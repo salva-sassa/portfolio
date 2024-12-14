@@ -18,12 +18,10 @@ export default function ResumePage() {
     {
       title: "Team Leader",
       company: "Mavin",
-      date: "2024 - Present",
+      date: "October 2024 - Present",
       responsibilities: [
-        "Lead development of SaaS for fine-tuning image generation models",
-        "Implement user authentication with Auth0 and payment integration with Mercado Pago",
-        "Build with Next.js, React, Tailwind, MongoDB, Auth0, Replicate API, and Mercado Pago API",
-        "Oversee development of AI-powered article generation SaaS using Django, Celery, FastAPI, Tailwind, and LangChain"
+        "Led the development of a SaaS platform for fine-tuning image generation models, including user authentication, payment integration, and frontend/backend development using Next.js, React, Tailwind, MongoDB, and Replicate API.",
+        "Managed a team of 3 developers, applying Agile methodology (SCRUM) to plan sprints, manage activities and deadlines in Jira, and ensure timely project delivery.",
       ]
     },
     {
@@ -39,7 +37,7 @@ export default function ResumePage() {
     {
       title: "Junior Developer",
       company: "Mavin",
-      date: "February 2023 - 2024",
+      date: "February 2023 - January 2024",
       responsibilities: [
         "Develop Darwash, a livestock management system with Django, PostgreSQL, and Tailwind",
         "Build company landing page using Django and Tailwind"

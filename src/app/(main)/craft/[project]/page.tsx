@@ -33,7 +33,26 @@ const projects = {
     technologies: ['Django', 'Celery', 'Langchain', 'PostgreSQL', 'Docker'],
     date: 'February 2024',
     link: null
-  }
+  },
+  'higueras-app': {
+  title: 'Higueras Municipality App',
+  description: 'The Higueras Municipality App is a complete redesign of the previous platform, focusing on a modern, user-friendly interface with improved UI/UX. The app simplifies the procedures for citizens and enhances the management experience for administration. It also integrates a weather API for real-time updates and includes basic CRUD functionalities.',
+  challenges: 'The main challenge was redesigning the entire app to improve the user experience while maintaining all existing functionalities. It was essential to make administrative tasks easier and more efficient, while ensuring the platform remained accessible to the citizens. Additionally, integrating the weather API seamlessly into the interface posed some technical hurdles.',
+  solutions: 'We revamped the app with a new design, focusing on simplicity and ease of use. The new UI/UX design improves the navigation and accessibility of procedures. CRUD operations were implemented to streamline the management tasks, and the weather API was integrated to provide real-time weather updates for the users. We also added an admin login feature for better control and management of the platform.',
+  technologies: ['Django', 'Docker', 'Illustrator', 'Figma'],
+  date: 'June 2023',
+  link: null
+},
+'mavin-landing': {
+  title: 'Mavin Landing Page',
+  description: 'The Mavin Landing Page is the official platform for our company, designed to showcase our projects, expertise, and vision. It serves as a gateway for potential clients and collaborators to explore our work, highlighting our innovative approach and professional capabilities.',
+  challenges: 'The main challenges involved designing a landing page that effectively represents our company\'s identity while providing an intuitive and engaging experience. Balancing visual appeal, responsive design, and concise communication of our projects and values was a critical focus.',
+  solutions: 'We utilized Django for a robust and dynamic backend, ensuring easy management of showcased projects. Tailwind CSS was used to implement a modern and responsive design. Illustrator and Photoshop supported the creation of custom visuals that align with our brand identity, while animations were added to create an interactive experience. Performance optimizations ensured fast load times across all devices.',
+  technologies: ['Django', 'Tailwind', 'Photoshop', 'Illustrator'],
+  date: 'April 2023',
+  link: 'https://www.mavin.com.ar/work/'
+}
+
 }
 
 export default function ProjectPage() {
