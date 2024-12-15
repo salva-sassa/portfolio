@@ -16,15 +16,6 @@ const projects = {
     date: 'April 2024',
     link: 'https://prodeman-dev.mavin.com.ar/en/'
   },
-  'mindfulness-app': {
-    title: 'Mindfulness & Trekking Experience',
-    description: 'A complete brand and digital presence crafted for a unique mindfulness and trekking entrepreneurship based in La Cumbrecita, Córdoba. This project combines the serenity of nature with the benefits of guided mindfulness practices.',
-    challenges: 'The primary challenge was creating a cohesive brand identity that resonated with the tranquility and adventure of the experience. Additionally, the landing page needed to integrate multimedia elements like illustrations, videos, and a booking system seamlessly while maintaining a high-performance and visually appealing interface.',
-    solutions: `We brought the client's vision to life by designing a custom brand identity, including logo, style guidelines, and Instagram visuals. A visually rich landing page was developed with illustrations, immersive imagery, and integrated video content. The booking system was tailored for weekend mindfulness and trekking trips, ensuring an intuitive user experience.`,
-    technologies: ['Django', 'PostgreSQL', 'Illustrator', 'Figma', 'Vercel'],
-    date: 'December 2023',
-    link: 'https://mindfulnesscba.vercel.app/'
-  },
   'ailessons-app': {
     title: 'AI Lessons App',
     description: 'AI Lessons App is an innovative SaaS platform that revolutionizes educational content creation. It empowers teachers to generate theoretical content for their subjects in schools or universities based on their program. The app supports student groups, customized content, practical exercises, and exams.',
@@ -33,6 +24,15 @@ const projects = {
     technologies: ['Django', 'Celery', 'Langchain', 'PostgreSQL', 'Docker'],
     date: 'February 2024',
     link: null
+  },
+  'mindfulness-app': {
+    title: 'Mindfulness & Trekking Experience',
+    description: 'A complete brand and digital presence crafted for a unique mindfulness and trekking entrepreneurship based in La Cumbrecita, Córdoba. This project combines the serenity of nature with the benefits of guided mindfulness practices.',
+    challenges: 'The primary challenge was creating a cohesive brand identity that resonated with the tranquility and adventure of the experience. Additionally, the landing page needed to integrate multimedia elements like illustrations, videos, and a booking system seamlessly while maintaining a high-performance and visually appealing interface.',
+    solutions: `We brought the client's vision to life by designing a custom brand identity, including logo, style guidelines, and Instagram visuals. A visually rich landing page was developed with illustrations, immersive imagery, and integrated video content. The booking system was tailored for weekend mindfulness and trekking trips, ensuring an intuitive user experience.`,
+    technologies: ['Django', 'PostgreSQL', 'Illustrator', 'Figma', 'Vercel'],
+    date: 'December 2023',
+    link: 'https://mindfulnesscba.vercel.app/'
   },
   'higueras-app': {
   title: 'Higueras Municipality App',
@@ -87,29 +87,29 @@ export default function ProjectPage() {
       </Button>
       
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold">{projectData.title}</h1>
+        <h1 className="text-xl lg:text-3xl font-bold">{projectData.title}</h1>
         <div className="w-20 h-1 rounded" style={{ background: 'linear-gradient(90deg, #ffdb70, #ffbb5c)' }} />
-        <p className="text-muted-foreground leading-relaxed">{projectData.description}</p>
+        <p className="text-sm lg:text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">{projectData.description}</p>
       </div>
       
       <div className="space-y-4">
-        <h2 className="text-2xl font-semibold">Challenges</h2>
-        <p className="text-muted-foreground leading-relaxed">{projectData.challenges}</p>
+        <h2 className="text-lg lg:text-2xl font-semibold">Challenges</h2>
+        <p className="text-sm lg:text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">{projectData.challenges}</p>
       </div>
       
       <div className="space-y-4">
-        <h2 className="text-2xl font-semibold">Solutions</h2>
-        <p className="text-muted-foreground leading-relaxed">{projectData.solutions}</p>
+        <h2 className="text-lg lg:text-2xl font-semibold">Solutions</h2>
+        <p className="text-sm lg:text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">{projectData.solutions}</p>
       </div>
       
       <div className="space-y-4">
-        <h2 className="text-2xl font-semibold">Technologies Used</h2>
-        <div className="flex flex-wrap gap-2">
+        <h2 className="text-lg lg:text-2xl font-semibold">Technologies Used</h2>
+        <div className="text-sm lg:text-base flex flex-wrap gap-2">
           {projectData.technologies.map((tech, index) => (
             <Badge
               key={index}
               variant="secondary"
-              className="px-3 py-1 rounded-full text-sm bg-secondary text-secondary-foreground"
+              className="px-3 py-1  rounded-full text-xs lg:text-sm bg-secondary text-secondary-foreground"
             >
               {tech}
             </Badge>
@@ -121,7 +121,7 @@ export default function ProjectPage() {
         <Button onClick={handleVisitProject}>
           Visit Project
         </Button>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-xs lg:text-sm dark:text-zinc-400 text-zinc-600">
           <strong>Completed:</strong> {projectData.date}
         </p>
       </div>

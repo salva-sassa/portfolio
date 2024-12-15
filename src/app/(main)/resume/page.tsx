@@ -64,7 +64,7 @@ export default function ResumePage() {
   return (
     <div className="space-y-8 p-4 md:p-8 md:pt-0">
       <div>
-        <h2 className="text-3xl font-bold mb-2">Resume</h2>
+        <h2 className="textxl lg:text-3xl font-bold mb-2">Resume</h2>
         <div className="w-12 h-1 rounded mb-6" style={{ background: 'linear-gradient(90deg, #ffdb70, #ffbb5c)' }} />
       </div>
 
@@ -79,7 +79,7 @@ function Section({ title, icon: Icon, items }: SectionProps) {
     <div className="space-y-6 px-2">
       <div className="flex items-center gap-2">
         <Icon className="w-6 h-6" style={{ color: '#ffdb70' }} />
-        <h3 className="text-2xl font-bold">{title}</h3>
+        <h3 className="text-lg lg:text-2xl font-bold">{title}</h3>
       </div>
       <div className="space-y-8">
         {items.map((item, index) => (
@@ -92,14 +92,14 @@ function Section({ title, icon: Icon, items }: SectionProps) {
 
 function TimelineItem({ title, company, date, responsibilities = [] }: TimelineItemProps) {
   return (
-    <div className="relative pl-8 border-l border-[#383838]">
+    <div className="relative pl-4 lg:pl-8 border-l dark:border-[#383838]">
       <div className="absolute w-3 h-3 bg-[#ffdb70] rounded-full -left-[6.5px] top-2" />
       <div className="space-y-2">
-        <h4 className="text-lg font-semibold">{title}</h4>
-        <div className="text-[#ffdb70]">{company}</div>
-        <div className="text-zinc-400">{date}</div>
+        <h4 className="text-base lg:text-lg font-semibold">{title}</h4>
+        <div className="text-sm lg:text-base dark:text-[#ffdb70] text-zinc-900">{company}</div>
+        <div className="text-sm lg:text-base dark:text-zinc-400 text-zinc-600">{date}</div>
         {responsibilities.length > 0 && (
-          <ul className="list-disc list-inside space-y-2 text-zinc-400">
+          <ul className="text-sm lg:text-base md:list-disc space-y-2 dark:text-zinc-400 text-zinc-600">
             {responsibilities.map((item, index) => (
               <li key={index}>{item}</li>
             ))}

@@ -43,7 +43,7 @@ export default function ContactPage() {
   return (
     <div className="space-y-8 p-8 md:pt-0">
       <div>
-        <h2 className="text-3xl font-bold mb-2">Contact</h2>
+        <h2 className="text-xl lg:text-3xl font-bold mb-2">Contact</h2>
         <div className="w-12 h-1 rounded mb-6" style={{ background: 'linear-gradient(90deg, #ffdb70, #ffbb5c)' }} />
       </div>
 
@@ -70,7 +70,7 @@ export default function ContactPage() {
                 type="text"
                 name="name"
                 placeholder="Full name"
-                className="w-full px-4 py-1.5 rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors"
+                className="w-full text-sm lg:text-base px-4 py-1.5 rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
@@ -81,7 +81,7 @@ export default function ContactPage() {
                 type="email"
                 name="email"
                 placeholder="Email address"
-                className="w-full px-4 py-1.5 rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors"
+                className="w-full text-sm lg:text-base px-4 py-1.5 rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
@@ -93,7 +93,7 @@ export default function ContactPage() {
               name="message"
               placeholder="Your Message"
               rows={3}
-              className="w-full px-4 py-1.5 rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors resize-none"
+              className="w-full px-4 py-1.5 text-sm lg:text-base rounded-lg bg-white dark:bg-[#121212] border border-[#b0b0b0] dark:border-[#383838] focus:border-[#3C3C3C] dark:focus:border-[#ffdb70] focus:outline-none transition-colors resize-none"
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               required

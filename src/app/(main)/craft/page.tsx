@@ -16,7 +16,7 @@ export default function PortfolioPage() {
   return (
     <div className="space-y-8 p-4 md:p-8 md:pt-0">
       <div>
-        <h2 className="text-3xl font-bold mb-2">Projects</h2>
+        <h2 className="text-xl lg:text-3xl font-bold mb-2">Projects</h2>
         <div className="w-12 h-1 rounded mb-6" style={{ background: 'linear-gradient(90deg, #ffdb70, #ffbb5c)' }} />
       </div>
 
