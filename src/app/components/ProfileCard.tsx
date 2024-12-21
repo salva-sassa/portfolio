@@ -87,19 +87,21 @@ export default function ProfileCard() {
           <span>CV</span>
           <FileDown className="w-5 h-5" />
         </Link>
-          <div className="flex gap-4">
+        <div className="flex gap-4">
             <Link href="https://www.linkedin.com/in/salvador-sassatelli/" target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-5 h-5 text-zinc-400 hover:text-[#ffdb70] transition-colors cursor-pointer" aria-label="Linkedin Profile" />
             </Link>
             <Link href="https://github.com/salva-sassa" target="_blank" rel="noopener noreferrer">
               <Github className="w-5 h-5 text-zinc-400 hover:text-[#ffdb70] transition-colors cursor-pointer" aria-label="GitHub Profile" />
             </Link>
+            {/*
             <Link href="https://x.com/salvasassa3" target="_blank" rel="noopener noreferrer">
               <Twitter className="w-5 h-5 text-zinc-400 hover:text-[#ffdb70] transition-colors cursor-pointer" aria-label="Twitter Profile" />
             </Link>
             <Link href="https://www.instagram.com/salva_sassa/" target="_blank" rel="noopener noreferrer">
               <Instagram className="w-5 h-5 text-zinc-400 hover:text-[#ffdb70] transition-colors cursor-pointer" aria-label="Instagram Profile" />
             </Link>
+            */}
           </div>
         </div>
       </div>

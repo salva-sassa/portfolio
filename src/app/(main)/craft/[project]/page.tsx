@@ -9,9 +9,9 @@ import { toast } from "@/hooks/use-toast"
 const projects = {
   'prodeman-app': {
     title: 'Prodeman App',
-    description: 'Prodeman App is a comprehensive solution for managing agricultural operations. It leverages Django for robust backend functionality, Celery for task management, Langchain for natural language processing, and Docker for easy deployment and scalability.',
-    challenges: 'One of the main challenges was integrating complex agricultural data processing with an intuitive user interface. We also had to ensure real-time updates and notifications for time-sensitive agricultural operations.',
-    solutions: 'We implemented a microservices architecture using Docker to separate concerns and allow for independent scaling of different components. Celery was used to handle background tasks such as data processing and notifications. Langchain was integrated to provide natural language interfaces for complex queries about agricultural data.',
+    description: 'Prodeman App is a platform designed to manage HR operations efficiently, enhancing task completion rates by 40%. The app integrates real-time processing and intelligent job matching to streamline large-scale company administration.',
+    challenges: 'The main challenge was designing a scalable system capable of handling complex HR workflows while ensuring an intuitive user experience. Building a comprehensive landing page with multiple sections to address diverse user needs added an additional layer of complexity.',
+    solutions: "We utilized Django for backend development, Celery for task management, and Langchain for intelligent job matching and real-time data processing. A feature-rich landing page was designed with multiple sections, supporting seamless navigation and showcasing the platform's key features. User-friendly interfaces were also developed for forms and role-based permissions tailored to HR needs.",
     technologies: ['Django', 'Celery', 'Langchain', 'Docker', 'PostgreSQL', 'Redis', 'React'],
     date: 'April 2024',
     link: 'https://prodeman-dev.mavin.com.ar/en/'
