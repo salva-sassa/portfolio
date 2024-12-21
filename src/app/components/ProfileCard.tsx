@@ -1,4 +1,4 @@
-import { Mail, Phone, Calendar, MapPin, Twitter, Instagram, Github, FileDown, Linkedin } from 'lucide-react';
+import { Mail, Phone, Calendar, MapPin, Github, FileDown, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
