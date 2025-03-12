@@ -8,10 +8,12 @@ import Link from 'next/link'
 
 export default function PortfolioPage() {
   const [isHovered, setIsHovered] = useState(false)
+  const [isHoveredLevelling, setIsHoveredLevelling] = useState(false)
   const [isHoveredProdeman, setIsHoveredProdeman] = useState(false)
   const [isHoveredAilessons, setIsHoveredAilessons] = useState(false)
   const [isHoveredHigueras, setIsHoveredHigueras] = useState(false)
   const [isHoveredMavin, setIsHoveredMavin] = useState(false)
+  const [isHoveredBazaia, setIsHoveredBazaia] = useState(false)
 
   return (
     <div className="space-y-8 p-4 md:p-8 md:pt-0">
@@ -21,9 +23,93 @@ export default function PortfolioPage() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
+
         <div className="group relative rounded-lg overflow-hidden">
           <div 
-            className="relative"
+            className="relative aspect-video"
+            onMouseEnter={() => setIsHoveredLevelling(true)}
+            onMouseLeave={() => setIsHoveredLevelling(false)}
+          >
+            <video
+              src="/projects/levellingio_640p.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+            <div className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${isHoveredLevelling ? 'opacity-100' : 'opacity-0'}`}>
+              <div className="flex flex-col items-start justify-end h-full p-6">
+                <h3 className="text-xl text-white font-bold mb-2">Levelling.io</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="bg-primary-foreground text-primary">Next.js</Badge>
+                  <Badge variant="outline" className="bg-primary-foreground text-primary">React</Badge>
+                  <Badge variant="outline" className="bg-primary-foreground text-primary">Express</Badge>
+                  <Badge variant="outline" className="bg-primary-foreground text-primary">WebSockets</Badge>
+                </div>
+              </div>
+            </div>
+            {!isHoveredLevelling && (
+              <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center">
+                <p className="text-xs text-white">Levelling.io</p>
+                <p className="text-xs text-zinc-300">March 2025</p>
+              </div>
+            )}
+          </div>
+          <div className="flex">
+            <Button variant="secondary" size="sm" className="flex-1 rounded-none border-r hover:bg-zinc-200 dark:hover:bg-zinc-900 border-gray-300 dark:border-gray-950" asChild>
+              <Link href="/craft/levellingio">Learn More</Link>
+            </Button>
+          </div>
+        </div>
+
+        <div className="group relative rounded-lg overflow-hidden">
+            <div 
+              className="relative aspect-video"
+              onMouseEnter={() => setIsHoveredBazaia(true)}
+              onMouseLeave={() => setIsHoveredBazaia(false)}
+            >
+              <video
+                src="/projects/bazaia_640.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+              <div className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${isHoveredBazaia ? 'opacity-100' : 'opacity-0'}`}>
+                <div className="flex flex-col items-start justify-end h-full p-6">
+                  <h3 className="text-xl text-white font-bold mb-2">Bazaia IA</h3>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline" className="bg-primary-foreground text-primary">Next.js</Badge>
+                    <Badge variant="outline" className="bg-primary-foreground text-primary">MongoDB</Badge>
+                    <Badge variant="outline" className="bg-primary-foreground text-primary">Langchain</Badge>
+                    <Badge variant="outline" className="bg-primary-foreground text-primary">Auth0</Badge>
+                  </div>
+                </div>
+              </div>
+              {!isHoveredBazaia && (
+                <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center">
+                  <p className="text-xs text-white">Bazaia IA</p>
+                  <p className="text-xs text-zinc-300">January 2025</p>
+                </div>
+              )}
+            </div>
+            <div className="flex">
+              <Button variant="secondary" size="sm" className="flex-1 rounded-none border-r hover:bg-zinc-200 dark:hover:bg-zinc-900 border-gray-300 dark:border-gray-950" asChild>
+                <Link href="/craft/bazaia-ia">Learn More</Link>
+              </Button>
+              <Button variant="secondary" size="sm" className="flex-1 rounded-none hover:bg-zinc-200 dark:hover:bg-zinc-900" asChild>
+                <a href="https://bazaia.com" target="_blank" rel="noopener noreferrer">Visit</a>
+              </Button>
+            </div>
+        </div>
+
+        <div className="group relative rounded-lg overflow-hidden">
+          <div 
+            className="relative aspect-video"
             onMouseEnter={() => setIsHoveredProdeman(true)}
             onMouseLeave={() => setIsHoveredProdeman(false)}
           >
@@ -66,7 +152,7 @@ export default function PortfolioPage() {
 
         <div className="group relative rounded-lg overflow-hidden">
           <div 
-            className="relative"
+            className="relative aspect-video"
             onMouseEnter={() => setIsHoveredAilessons(true)}
             onMouseLeave={() => setIsHoveredAilessons(false)}
           >
@@ -106,7 +192,7 @@ export default function PortfolioPage() {
 
         <div className="group relative rounded-lg overflow-hidden">
           <div 
-            className="relative"
+            className="relative aspect-video"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -148,7 +234,7 @@ export default function PortfolioPage() {
 
         <div className="group relative rounded-lg overflow-hidden">
           <div 
-            className="relative"
+            className="relative aspect-video"
             onMouseEnter={() => setIsHoveredHigueras(true)}
             onMouseLeave={() => setIsHoveredHigueras(false)}
           >
@@ -188,7 +274,7 @@ export default function PortfolioPage() {
 
         <div className="group relative rounded-lg overflow-hidden">
           <div 
-            className="relative"
+            className="relative aspect-video"
             onMouseEnter={() => setIsHoveredMavin(true)}
             onMouseLeave={() => setIsHoveredMavin(false)}
           >
