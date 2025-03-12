@@ -5,7 +5,7 @@ import ProfileCard from "./components/ProfileCard";
 import ThemeProvider from "./components/ThemeProvider";
 import ThemeToggle from "./components/ThemeToggle";
 import RotatingLogo from "./components/RotatingLogo";
-import Aurora from './components/Aurora';
+// import Aurora from './components/Aurora';
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export const metadata: Metadata = {

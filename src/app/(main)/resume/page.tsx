@@ -1,4 +1,4 @@
-import { Briefcase, GraduationCap, type LucideIcon } from 'lucide-react'
+import { GraduationCap, type LucideIcon } from 'lucide-react'
 
 type TimelineItemProps = {
   title: string
