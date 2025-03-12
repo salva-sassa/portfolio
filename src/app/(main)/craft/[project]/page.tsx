@@ -2,11 +2,30 @@
 
 import { useParams, useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Badge } from "@/components/ui/badge"
 import { toast } from "@/hooks/use-toast"
+import { useState, useEffect } from 'react'
 
 const projects = {
+  'bazaia-ia': {
+    title: 'Bazaia IA',
+    description: 'Bazaia IA is a sophisticated SaaS platform that enables users to create stunning AI-generated content including images, videos, and 3D assets. The platform supports multiple input methods, allowing users to generate content via text prompts or by uploading reference images, depending on the AI generative model being used.',
+    challenges: 'The main challenges included implementing a flexible architecture to support diverse AI generative models, ensuring efficient storage and retrieval of large prediction files, building a robust payment infrastructure with multiple providers, and developing an intuitive UI that simplifies the complex process of prompt engineering for various AI models.',
+    solutions: 'Built the application with Next.js for performance and SEO benefits, utilizing MongoDB for flexible data storage of user profiles and prediction metadata. Large prediction files are efficiently managed through DigitalOcean Spaces buckets. We implemented a sophisticated chatbot using Langchain that assists users in generating effective prompts for different AI models. The platform features a dual-payment system with both Mercado Pago and Stripe integration, while Auth0 provides secure authentication with minimal development overhead.',
+    technologies: ['Next.js', 'MongoDB', 'DigitalOcean', 'Langchain', 'Mercado Pago API', 'Stripe', 'Auth0', 'React', 'TypeScript', 'Tailwind CSS'],
+    date: 'January 2025',
+    link: 'https://bazaia.com'
+  },
+  'levellingio': {
+    title: 'Levelling.io',
+    description: 'Levelling.io is an experimental project designed to explore real-time multiplayer game development concepts. The platform demonstrates practical applications of WebSockets, concurrency management, state synchronization between multiple clients, and implementation of efficient data structures for game development.',
+    challenges: 'The primary challenges included establishing reliable real-time communication between multiple clients, ensuring consistent state synchronization across different devices, handling concurrent user interactions without conflicts, and optimizing data structures for performant gameplay even with multiple connected users.',
+    solutions: 'We implemented a dual-architecture approach with Next.js and React powering the frontend UI layer, while Phaser served as the game engine. The backend was built with Express, leveraging Socket.io for WebSocket communication to enable real-time multiplayer functionality. This architecture allowed for efficient state management and seamless synchronization between players, creating a responsive and consistent gaming experience.',
+    technologies: ['Next.js', 'React', 'Express', 'WebSockets', 'Socket.io', 'Phaser', 'JavaScript'],
+    date: 'March 2025',
+    link: null
+  },
   'prodeman-app': {
     title: 'Prdmn App',
     description: 'Prdmn App is a platform designed to manage HR operations efficiently, enhancing task completion rates by 40%. The app integrates real-time processing and intelligent job matching to streamline large-scale company administration.',
@@ -59,6 +78,51 @@ export default function ProjectPage() {
   const router = useRouter()
   const { project } = useParams()
   const projectData = projects[project as keyof typeof projects]
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isLoading, setIsLoading] = useState(true)
+
+  const bazaiaImages = [
+    '/projects/bazaia/mona.webp',
+    '/projects/bazaia/einstein1.webp',
+    '/projects/bazaia/einstein2.webp',
+    '/projects/bazaia/einstein3.webp',
+    '/projects/bazaia/donaldtrump1.webp',
+    '/projects/bazaia/donaldtrump2.webp',
+    '/projects/bazaia/msbeast.webp',
+    '/projects/bazaia/basketfire.webp',
+    '/projects/bazaia/text.webp',
+    '/projects/bazaia/shoes.webp',
+    '/projects/bazaia/pet1.webp',
+    '/projects/bazaia/pet2.webp',
+  ]
+
+  const bazaiaDescriptions = [
+    'Reimagined Mona Gimenez with modern artistic elements',
+    'Albert Einstein in an abstract galaxy portrait style',
+    'Einstein visualization, detailed stamp',
+    'Artistic representation of Einstein painting',
+    'Donald Trump pattern card',
+    'Trump in japanese style',
+    'MrBeast portrayed in a luxury sofa',
+    'Basketball engulfed in flames concept',
+    'Text generation model creating formatted content',
+    'Product visualization of sneaker design concept',
+    'Photorealistic cute puppy generated from text description',
+    'Pet portrait painting',
+  ]
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === bazaiaImages.length - 1 ? 0 : prev + 1))
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? bazaiaImages.length - 1 : prev - 1))
+  }
+
+  // Reset loading state when image changes
+  useEffect(() => {
+    setIsLoading(true)
+  }, [currentSlide])
 
   if (!projectData) {
     return <div className="flex items-center justify-center h-screen">Project not found</div>
@@ -101,7 +165,88 @@ export default function ProjectPage() {
         <h2 className="text-lg lg:text-2xl font-semibold">Solutions</h2>
         <p className="text-sm lg:text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">{projectData.solutions}</p>
       </div>
-      
+
+      {project === 'levellingio' && (
+        <div className="space-y-4">
+          <h2 className="text-lg lg:text-2xl font-semibold">Game Assets</h2>
+          <p className="text-sm lg:text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">
+            All game assets were designed using Figma, allowing for clean geometric UI elements and collectible items that maintain visual consistency across the game environment.
+          </p>
+          <div className="overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800">
+            <img 
+              src="/projects/levelling_figma.webp" 
+              alt="Levelling.io Figma assets" 
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </div>
+      )}
+
+      {project === 'bazaia-ia' && (
+        <div className="space-y-4">
+          <h2 className="text-lg lg:text-2xl font-semibold">AI Predictions</h2>
+          <p className="text-sm lg:text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">
+            Bazaia IA enables users to create stunning AI-generated content. Below are examples of predictions generated through our platform, showcasing the quality and diversity of outputs from various AI models.
+          </p>
+          <div className="relative overflow-hidden rounded-lg bg-zinc-100 dark:bg-[#131312] aspect-[16/9]">
+            {/* Loading overlay */}
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-zinc-100 dark:bg-zinc-800 bg-opacity-50 dark:bg-opacity-50 z-10">
+                <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+              </div>
+            )}
+            
+            {/* Current image */}
+            <img 
+              src={bazaiaImages[currentSlide]} 
+              alt={`Bazaia IA prediction example ${currentSlide + 1}`} 
+              className="w-full h-full object-contain transition-opacity duration-300"
+              onLoad={() => setIsLoading(false)}
+            />
+            
+            {/* Image description */}
+            <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+              <div className="bg-black/70 text-white px-4 py-2 rounded-full text-sm max-w-[80%] text-center">
+                {bazaiaDescriptions[currentSlide]}
+              </div>
+            </div>
+            
+            {/* Navigation buttons */}
+            <button 
+              onClick={prevSlide} 
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition-colors"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            
+            <button 
+              onClick={nextSlide} 
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition-colors"
+              aria-label="Next image"
+            >
+              <ChevronRight size={20} />
+            </button>
+            
+            {/* Dots indicator */}
+            <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
+              {bazaiaImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    currentSlide === index 
+                      ? 'bg-white scale-110' 
+                      : 'bg-white/50 hover:bg-white/70'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="space-y-4">
         <h2 className="text-lg lg:text-2xl font-semibold">Technologies Used</h2>
         <div className="text-sm lg:text-base flex flex-wrap gap-2">
