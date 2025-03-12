@@ -38,9 +38,9 @@ export default function ProfileCard() {
           </Suspense>
         </div>
         <h1 className="text-2xl text-center font-bold mb-2">Salvador Sassatelli</h1>
-        <div className="bg-zinc-800/10 dark:bg-zinc-800 text-center px-4 py-1 rounded-full text-sm mb-8">
-          Full-stack IA focused developer
-        </div>
+        <p className="bg-zinc-800/10 dark:bg-zinc-800 text-center px-4 py-1 rounded-full text-sm mb-8">
+          Full-stack developer
+        </p>
 
         <div className="w-full space-y-4">
           <div className="flex items-center gap-4">
