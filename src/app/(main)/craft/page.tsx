@@ -16,7 +16,7 @@ export default function PortfolioPage() {
   return (
     <div className="space-y-8 p-4 md:p-8 md:pt-0">
       <div>
-        <h2 className="text-xl lg:text-3xl font-bold mb-2">Projects</h2>
+        <h2 className="text-xl lg:text-3xl font-bold mb-2 neue">Projects</h2>
         <div className="w-12 h-1 rounded mb-6" style={{ background: 'linear-gradient(90deg, #ffdb70, #ffbb5c)' }} />
       </div>
 
@@ -28,7 +28,7 @@ export default function PortfolioPage() {
             onMouseLeave={() => setIsHoveredProdeman(false)}
           >
             <video
-              src="/projects/prodeman_640p.mp4"
+              src="/projects/prodeman_blur.mp4"
               autoPlay
               loop
               muted
@@ -38,7 +38,7 @@ export default function PortfolioPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
             <div className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${isHoveredProdeman ? 'opacity-100' : 'opacity-0'}`}>
               <div className="flex flex-col items-start justify-end h-full p-6">
-                <h3 className="text-xl text-white font-bold mb-2">Prodeman App</h3>
+                <h3 className="text-xl text-white font-bold mb-2">Prdmn App</h3>
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="outline" className="bg-primary-foreground text-primary">Django</Badge>
                   <Badge variant="outline" className="bg-primary-foreground text-primary">Celery</Badge>
@@ -49,7 +49,7 @@ export default function PortfolioPage() {
             </div>
             {!isHoveredProdeman && (
               <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center">
-                <p className="text-xs text-white">Prodeman App</p>
+                <p className="text-xs text-white">Prdmn App</p>
                 <p className="text-xs text-zinc-300">April 2024</p>
               </div>
             )}

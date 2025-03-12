@@ -30,7 +30,7 @@ export default function RotatingLogo() {
     // Add a soft floating animation on both logos
     tl.to([lightLogoRef.current, darkLogoRef.current], {
       y: -10,
-      duration: 2,
+      duration: 5,
       ease: "power1.inOut",
       repeat: -1,
       yoyo: true,

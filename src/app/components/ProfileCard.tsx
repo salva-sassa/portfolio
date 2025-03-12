@@ -38,9 +38,9 @@ export default function ProfileCard() {
           </Suspense>
         </div>
         <h1 className="text-2xl text-center font-bold mb-2">Salvador Sassatelli</h1>
-        <div className="bg-zinc-800/10 dark:bg-zinc-800 text-center px-4 py-1 rounded-full text-sm mb-8">
-          Full-stack IA focused developer
-        </div>
+        <p className="bg-zinc-800/10 dark:bg-zinc-800 text-center px-4 py-1 rounded-full text-sm mb-8">
+          Full-stack developer
+        </p>
 
         <div className="w-full space-y-4">
           <div className="flex items-center gap-4">
@@ -81,7 +81,7 @@ export default function ProfileCard() {
           href="/Salvador_Sassatelli_CV.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-3 py-2 text-sm font-medium bg-[#ffdb70] text-zinc-700 hover:bg-[#face49] rounded-md  dark:bg-[#ffdb70] dark:hover:bg-[#e6c34f] dark:text-zinc-900 transition-all"
+          className="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg hover:scale-95 text-gray-200 dark:text-black font-medium dark:bg-gradient-to-r dark:from-[#f5ca48] dark:to-[#ffbb5c] bg-gradient-to-r from-[#7E7E7E] to-[#3C3C3C] filter transition-all"
           aria-label="Download CV"
         >
           <span>CV</span>

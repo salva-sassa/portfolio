@@ -8,8 +8,8 @@ import { toast } from "@/hooks/use-toast"
 
 const projects = {
   'prodeman-app': {
-    title: 'Prodeman App',
-    description: 'Prodeman App is a platform designed to manage HR operations efficiently, enhancing task completion rates by 40%. The app integrates real-time processing and intelligent job matching to streamline large-scale company administration.',
+    title: 'Prdmn App',
+    description: 'Prdmn App is a platform designed to manage HR operations efficiently, enhancing task completion rates by 40%. The app integrates real-time processing and intelligent job matching to streamline large-scale company administration.',
     challenges: 'The main challenge was designing a scalable system capable of handling complex HR workflows while ensuring an intuitive user experience. Building a comprehensive landing page with multiple sections to address diverse user needs added an additional layer of complexity.',
     solutions: "We utilized Django for backend development, Celery for task management, and Langchain for intelligent job matching and real-time data processing. A feature-rich landing page was designed with multiple sections, supporting seamless navigation and showcasing the platform's key features. User-friendly interfaces were also developed for forms and role-based permissions tailored to HR needs.",
     technologies: ['Django', 'Celery', 'Langchain', 'Docker', 'PostgreSQL', 'Redis', 'React'],
