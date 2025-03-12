@@ -34,39 +34,6 @@ This portfolio is built with:
 - [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript at Any Scale
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 
-## 🏗 Project Structure
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-```
-portfolio/
-├── pages/
-│   ├── index.tsx
-│   ├── about.tsx
-│   └── projects.tsx
-├── components/
-│   ├── Header.tsx
-│   ├── Footer.tsx
-│   └── ProjectCard.tsx
-├── styles/
-│   └── globals.css
-├── public/
-│   └── images/
-└── README.md
-```
-
-## 🚀 Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 ## 📫 Contact
 
 <a href="https://www.linkedin.com/in/salvador-sassatelli/" target="_blank">
