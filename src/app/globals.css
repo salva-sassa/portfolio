@@ -90,6 +90,46 @@ body {
   }
 }
 
+/* Background Beams animations */
+@keyframes gradient-x {
+  0%, 100% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes gradient-y {
+  0%, 100% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 15s linear infinite;
+}
+
+.animate-gradient-y {
+  animation: gradient-y 15s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
 @keyframes spin1080 {
   0% {
     transform: rotate(0deg);
