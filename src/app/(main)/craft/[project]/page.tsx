@@ -6,6 +6,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Badge } from "@/components/ui/badge"
 import { toast } from "@/hooks/use-toast"
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const projects = {
   'bazaia-ia': {
@@ -175,10 +176,12 @@ export default function ProjectPage() {
             All game assets were designed using Figma, allowing for clean geometric UI elements and collectible items that maintain visual consistency across the game environment.
           </p>
           <div className="overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800">
-            <img 
+            <Image 
               src="/projects/levelling_figma.webp" 
               alt="Levelling.io Figma assets" 
               className="w-full h-auto object-contain"
+              width={800}
+              height={450}
             />
           </div>
         </div>
@@ -191,7 +194,7 @@ export default function ProjectPage() {
             Bazaia IA enables users to create stunning AI-generated content. Below are examples of predictions generated through our platform, showcasing the quality and diversity of outputs from various AI models.
             {currentSlide === bazaiaImages.length - 1 && (
               <span className="inline-block ml-1 opacity-0 hover:opacity-100 transition-opacity duration-500 cursor-help text-primary">
-                (Psst! Even the creator's portrait was made with Bazaia IA!)
+                (Psst! Even the creator&apos;s portrait was made with Bazaia IA!)
               </span>
             )}
           </p>
@@ -204,10 +207,12 @@ export default function ProjectPage() {
             )}
             
             {/* Current image */}
-            <img 
+            <Image 
               src={bazaiaImages[currentSlide]} 
               alt={`Bazaia IA prediction example ${currentSlide + 1}`} 
               className="w-full h-full object-contain transition-opacity duration-300"
+              width={400}
+              height={400}
               onLoad={() => setIsLoading(false)}
             />
             
