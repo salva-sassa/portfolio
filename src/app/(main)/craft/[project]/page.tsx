@@ -206,7 +206,7 @@ export default function ProjectPage() {
             
             {/* Image description */}
             <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-              <div className="bg-black/70 text-white px-4 py-2 rounded-full text-sm max-w-[80%] text-center">
+              <div className="bg-black/70 text-white px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm max-w-[80%] text-center">
                 {bazaiaDescriptions[currentSlide]}
               </div>
             </div>
