@@ -13,7 +13,7 @@ const projects = {
     description: 'Bazaia IA is a sophisticated SaaS platform that enables users to create stunning AI-generated content including images, videos, and 3D assets. The platform supports multiple input methods, allowing users to generate content via text prompts or by uploading reference images, depending on the AI generative model being used.',
     challenges: 'The main challenges included implementing a flexible architecture to support diverse AI generative models, ensuring efficient storage and retrieval of large prediction files, building a robust payment infrastructure with multiple providers, and developing an intuitive UI that simplifies the complex process of prompt engineering for various AI models.',
     solutions: 'Built the application with Next.js for performance and SEO benefits, utilizing MongoDB for flexible data storage of user profiles and prediction metadata. Large prediction files are efficiently managed through DigitalOcean Spaces buckets. We implemented a sophisticated chatbot using Langchain that assists users in generating effective prompts for different AI models. The platform features a dual-payment system with both Mercado Pago and Stripe integration, while Auth0 provides secure authentication with minimal development overhead.',
-    technologies: ['Next.js', 'MongoDB', 'DigitalOcean', 'Langchain', 'Mercado Pago API', 'Stripe', 'Auth0', 'React', 'TypeScript', 'Tailwind CSS'],
+    technologies: ['Next.js', 'MongoDB', 'DigitalOcean', 'Langchain', 'Mercado Pago API', 'Stripe', 'Auth0', 'React', 'TypeScript', 'Tailwind CSS', 'Figma'],
     date: 'January 2025',
     link: 'https://bazaia.com'
   },
@@ -22,7 +22,7 @@ const projects = {
     description: 'Levelling.io is an experimental project designed to explore real-time multiplayer game development concepts. The platform demonstrates practical applications of WebSockets, concurrency management, state synchronization between multiple clients, and implementation of efficient data structures for game development.',
     challenges: 'The primary challenges included establishing reliable real-time communication between multiple clients, ensuring consistent state synchronization across different devices, handling concurrent user interactions without conflicts, and optimizing data structures for performant gameplay even with multiple connected users.',
     solutions: 'We implemented a dual-architecture approach with Next.js and React powering the frontend UI layer, while Phaser served as the game engine. The backend was built with Express, leveraging Socket.io for WebSocket communication to enable real-time multiplayer functionality. This architecture allowed for efficient state management and seamless synchronization between players, creating a responsive and consistent gaming experience.',
-    technologies: ['Next.js', 'React', 'Express', 'WebSockets', 'Socket.io', 'Phaser', 'JavaScript'],
+    technologies: ['Next.js', 'React', 'Express', 'WebSockets', 'Socket.io', 'Phaser', 'TypeScript', 'Figma'],
     date: 'March 2025',
     link: null
   },
@@ -31,7 +31,7 @@ const projects = {
     description: 'Prdmn App is a platform designed to manage HR operations efficiently, enhancing task completion rates by 40%. The app integrates real-time processing and intelligent job matching to streamline large-scale company administration.',
     challenges: 'The main challenge was designing a scalable system capable of handling complex HR workflows while ensuring an intuitive user experience. Building a comprehensive landing page with multiple sections to address diverse user needs added an additional layer of complexity.',
     solutions: "We utilized Django for backend development, Celery for task management, and Langchain for intelligent job matching and real-time data processing. A feature-rich landing page was designed with multiple sections, supporting seamless navigation and showcasing the platform's key features. User-friendly interfaces were also developed for forms and role-based permissions tailored to HR needs.",
-    technologies: ['Django', 'Celery', 'Langchain', 'Docker', 'PostgreSQL', 'Redis', 'React'],
+    technologies: ['Django', 'Celery', 'Langchain', 'Docker', 'PostgreSQL', 'React', 'Adobe Illustrator/Photoshop', 'Figma'],
     date: 'April 2024',
     link: 'https://prodeman-dev.mavin.com.ar/en/'
   },
@@ -94,6 +94,7 @@ export default function ProjectPage() {
     '/projects/bazaia/shoes.webp',
     '/projects/bazaia/pet1.webp',
     '/projects/bazaia/pet2.webp',
+    '/projects/bazaia/salva-light.webp',
   ]
 
   const bazaiaDescriptions = [
@@ -109,6 +110,7 @@ export default function ProjectPage() {
     'Product visualization of sneaker design concept',
     'Photorealistic cute puppy generated from text description',
     'Pet portrait painting',
+    'Fun fact: Even my profile picture was created using Bazaia IA!',
   ]
 
   const nextSlide = () => {
@@ -187,8 +189,13 @@ export default function ProjectPage() {
           <h2 className="text-lg lg:text-2xl font-semibold">AI Predictions</h2>
           <p className="text-sm lg:text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">
             Bazaia IA enables users to create stunning AI-generated content. Below are examples of predictions generated through our platform, showcasing the quality and diversity of outputs from various AI models.
+            {currentSlide === bazaiaImages.length - 1 && (
+              <span className="inline-block ml-1 opacity-0 hover:opacity-100 transition-opacity duration-500 cursor-help text-primary">
+                (Psst! Even the creator's portrait was made with Bazaia IA!)
+              </span>
+            )}
           </p>
-          <div className="relative overflow-hidden rounded-lg bg-zinc-100 dark:bg-[#131312] aspect-[16/9]">
+          <div className="relative overflow-hidden mx-auto rounded-lg bg-zinc-100 dark:bg-[#131312] aspect-square max-h-[400px]">
             {/* Loading overlay */}
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-zinc-100 dark:bg-zinc-800 bg-opacity-50 dark:bg-opacity-50 z-10">
@@ -240,6 +247,7 @@ export default function ProjectPage() {
                       : 'bg-white/50 hover:bg-white/70'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
+                  title={index === bazaiaImages.length - 1 ? "Creator's secret" : `Slide ${index + 1}`}
                 />
               ))}
             </div>
