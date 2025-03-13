@@ -188,7 +188,7 @@ export default function ProjectPage() {
           <p className="text-sm lg:text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">
             Bazaia IA enables users to create stunning AI-generated content. Below are examples of predictions generated through our platform, showcasing the quality and diversity of outputs from various AI models.
           </p>
-          <div className="relative overflow-hidden rounded-lg bg-zinc-100 dark:bg-[#131312] aspect-[16/9]">
+          <div className="relative overflow-hidden mx-auto rounded-lg bg-zinc-100 dark:bg-[#131312] aspect-square max-h-[400px]">
             {/* Loading overlay */}
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-zinc-100 dark:bg-zinc-800 bg-opacity-50 dark:bg-opacity-50 z-10">
