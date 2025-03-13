@@ -6,7 +6,7 @@ import ThemeProvider from "./components/ThemeProvider";
 import ThemeToggle from "./components/ThemeToggle";
 import RotatingLogo from "./components/RotatingLogo";
 // import Aurora from './components/Aurora';
-// import { BackgroundBeams } from "@/components/ui/background-beams";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export const metadata: Metadata = {
   title: "Salvador Sassatelli - Portfolio",
@@ -45,8 +45,8 @@ export default function RootLayout({
               amplitude={1.0}
               speed={0.5}
             />
-            <BackgroundBeams />
             */}
+            <BackgroundBeams />
           </div>
         
           <div className="max-w-7xl w-full h-full md:h-[calc(80vh-2rem)] mb-20 md:mb-[12vh] grid grid-cols-1 sm:grid-cols-4 md:grid-cols-8 lg:grid-cols-7 gap-8">
