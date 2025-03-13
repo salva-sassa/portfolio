@@ -81,7 +81,7 @@ export default function PortfolioPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
               <div className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${isHoveredBazaia ? 'opacity-100' : 'opacity-0'}`}>
                 <div className="flex flex-col items-start justify-end h-full p-6">
-                  <h3 className="text-xl text-white font-bold mb-2">Bazaia IA</h3>
+                  <h3 className="text-xl text-white font-bold mb-2">Bazaia IA SaaS</h3>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="outline" className="bg-primary-foreground text-primary">Next.js</Badge>
                     <Badge variant="outline" className="bg-primary-foreground text-primary">MongoDB</Badge>
